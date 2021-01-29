@@ -59,6 +59,8 @@ for (section of sections) {
     navItem.appendChild(navItemLink);
     // append the link to the navbar
     navbar.appendChild(navItem);
+    // attach the event listener
+    navItem.addEventListener("click", scrollToClick);
 }
 };
 // Add class 'active' to section when near top of viewport
@@ -76,17 +78,18 @@ function addActiveClass(){
 // Scroll to anchor ID using scrollTO event
 
 function scrollToClick(event) {
-    navItem.addEventListener("click", scrollToClick);
-        ev.preventDefault()        
-        const clicked = document.querySelector(section.id);
+        event.preventDefault()
+        //e.target.dataset["section"] = to fetch the section id which to scroll       
+        const clicked = document.querySelector('#' + event.target.dataset["section"]);
+        // another way to write this line
+        // const clicked = document.querySelector(`#${e.target.dataset["section"]}`);
         clicked.scrollIntoView({
             block: "start",
             alignToTop: true,
             behavior: "smooth"
         });
     };
-
-    
+  
 
 /**
  * End Main Functions
