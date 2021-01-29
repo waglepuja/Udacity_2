@@ -1,1 +1,1 @@
-# Udacity_2
+Udacity Landing Page Project
