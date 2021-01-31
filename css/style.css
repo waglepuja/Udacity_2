@@ -92,6 +92,18 @@ section {
     transition: ease 0.3s all;
 }
 
+.link__active{
+    background: #333;
+    color: #fff;
+    transition: ease 0.3s all;
+    text-decoration: underline;
+}
+
+/* .menu__link{
+    background: red;
+} */
+
+
 /* Header Styles */
 .page__header {
     background: #fff;

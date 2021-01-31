@@ -72,8 +72,15 @@ function addActiveClass(){
         }else{
             section.classList.remove("your-active-class");
         }
-    }
+        // const highlight = document.getElementById("navbar__list")
+        // if (isInViewport) {
+        //     highlight.classList.add("link__active");
+        // } else {
+        //     highlight.classList.remove("link__active");
+        // }        
+    }        
 };
+
 
 // Scroll to anchor ID using scrollTO event
 
@@ -87,10 +94,19 @@ function scrollToClick(event) {
             block: "start",
             alignToTop: true,
             behavior: "smooth"
+            
         });
-    };
-  
 
+        const highlight = document.getElementById("navbar__list")
+        if (isInViewport) {
+            highlight.classList.add("link__active");
+        } else {
+            highlight.classList.remove("link__active");
+        }        
+    };    
+       
+    
+  
 /**
  * End Main Functions
  * Begin Events
@@ -102,6 +118,7 @@ function scrollToClick(event) {
 buildNavBar();
 
 // Scroll to section on link click
+
 
 // // Set sections as active
 
