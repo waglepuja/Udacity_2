@@ -92,13 +92,18 @@ function scrollToClick(event) {
         });
 
         // active navbar when clicked on the link
-        const highlight = document.querySelector("li")
-        if (isInViewport) {
-            highlight.classList.add("link__active");
+        // `.querySelectorAll` which selects all the list items. Once the list items are selected, you need to loop through the variable which has all the list items. Inside the loop, you need to compare the dataset of the child element of selected list i.e. `a` element with the `event.target.dataset` with && of `isInViewport` function. If the condition returns true, add the active class else remove the active class.
+
+        const highlight = document.querySelectorAll("li")
+        highlight.forEach((element) => {
+            if (element.childNodes[0].dataset === event.target.dataset &&  
+                isInViewport) {
+                element.classList.add("link__active");
         } else {
-            highlight.classList.remove("link__active");
+            element.classList.remove("link__active");
         }       
-    };   
+    });
+}   
     
      
 /**
