@@ -93,11 +93,13 @@ section {
 }
 
 .link__active{
-    background: #333;
+    background:#fff;    
     color: #fff;
     transition: ease 0.3s all;
-    text-decoration: underline;
 }
+    
+
+
 
 /* .menu__link{
     background: red;

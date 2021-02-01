@@ -82,8 +82,7 @@ function addActiveClass(){
 function scrollToClick(event) {
         event.preventDefault()
         //e.target.dataset["section"] = to fetch the section id which to scroll       
-        const clicked = document.querySelector('#' + event.target.dataset["section"]);
-        
+        const clicked = document.querySelector('#' + event.target.dataset["section"]);        
         // another way to write this line
         // const clicked = document.querySelector(`#${e.target.dataset["section"]}`);
         clicked.scrollIntoView({
@@ -93,13 +92,13 @@ function scrollToClick(event) {
         });
 
         // active navbar when clicked on the link
-        const highlight = document.getElementById("navbar__list")
+        const highlight = document.querySelector("li")
         if (isInViewport) {
             highlight.classList.add("link__active");
         } else {
             highlight.classList.remove("link__active");
         }       
-    }; 
+    };   
     
      
 /**
@@ -113,7 +112,6 @@ function scrollToClick(event) {
 buildNavBar();
 
 // Scroll to section on link click
-
 
 // // Set sections as active
 
