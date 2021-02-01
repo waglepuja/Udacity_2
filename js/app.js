@@ -63,6 +63,7 @@ for (section of sections) {
     navItem.addEventListener("click", scrollToClick);
 }
 };
+
 // Add class 'active' to section when near top of viewport
 
 function addActiveClass(){         
@@ -71,13 +72,7 @@ function addActiveClass(){
             section.classList.add("your-active-class");
         }else{
             section.classList.remove("your-active-class");
-        }
-        // const highlight = document.getElementById("navbar__list")
-        // if (isInViewport) {
-        //     highlight.classList.add("link__active");
-        // } else {
-        //     highlight.classList.remove("link__active");
-        // }        
+        }        
     }        
 };
 
@@ -88,25 +83,25 @@ function scrollToClick(event) {
         event.preventDefault()
         //e.target.dataset["section"] = to fetch the section id which to scroll       
         const clicked = document.querySelector('#' + event.target.dataset["section"]);
+        
         // another way to write this line
         // const clicked = document.querySelector(`#${e.target.dataset["section"]}`);
         clicked.scrollIntoView({
             block: "start",
             alignToTop: true,
-            behavior: "smooth"
-            
+            behavior: "smooth"            
         });
 
+        // active navbar when clicked on the link
         const highlight = document.getElementById("navbar__list")
         if (isInViewport) {
             highlight.classList.add("link__active");
         } else {
             highlight.classList.remove("link__active");
-        }        
-    };    
-       
+        }       
+    }; 
     
-  
+     
 /**
  * End Main Functions
  * Begin Events
